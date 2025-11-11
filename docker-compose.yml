@@ -1,0 +1,50 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - DB_HOST=football-app-db-1
+      - DB_PORT=5432
+      - DB_NAME=football
+      - DB_USER=postgres
+      - DB_PASSWORD=mysecretpassword
+      - API_FOOTBALL_KEY=${API_FOOTBALL_KEY}
+    depends_on:
+      - db
+    networks:
+      - football-network
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: football
+    ports:
+      - "5433:5432"
+    networks:
+      - football-network
+
+  cron-job:
+    build: 
+      context: .
+      dockerfile: cron-job/Dockerfile
+    environment:
+      - DB_HOST=football-app-db-1
+      - DB_PORT=5432
+      - DB_NAME=football
+      - DB_USER=postgres
+      - DB_PASSWORD=mysecretpassword
+      - API_FOOTBALL_KEY=${API_FOOTBALL_KEY}
+    depends_on:
+      - db
+    networks:
+      - football-network
+
+networks:
+  football-network:
+    name: football-app_football-network
+    driver: bridge
