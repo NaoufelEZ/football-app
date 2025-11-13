@@ -5,7 +5,13 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
-export async function GET() {
+export async function GET(request) {
+  // Cron secret kontrolü (Vercel cron'ları için)
+  const authHeader = request.headers.get('Authorization');
+  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+    return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   const options = {
     method: 'GET',
     headers: {
@@ -15,16 +21,13 @@ export async function GET() {
   };
 
   try {
-    // API'den ülkeleri çek
     const response = await fetch('https://api-football-v1.p.rapidapi.com/v3/countries', options);
     const data = await response.json();
     
     const client = await pool.connect();
-    
     let inserted = 0;
     let updated = 0;
     
-    // Her ülkeyi veritabanına kaydet
     for (const country of data.response) {
       if (!country.code) continue;
       
@@ -38,24 +41,17 @@ export async function GET() {
         RETURNING xmax::text::int
       `, [country.name, country.code, country.flag]);
       
-      if (result.rows[0].xmax === 0) {
-        inserted++;
-      } else {
-        updated++;
-      }
+      if (result.rows[0].xmax === 0) inserted++;
+      else updated++;
     }
     
     client.release();
 
     return Response.json({
       success: true,
-      message: `${inserted} yeni ülke eklendi, ${updated} ülke güncellendi`,
-      count: inserted + updated
+      message: `${inserted} yeni ülke eklendi, ${updated} ülke güncellendi`
     });
   } catch (error) {
-    return Response.json({
-      success: false,
-      error: error.message
-    }, { status: 500 });
+    return Response.json({ error: error.message }, { status: 500 });
   }
 }

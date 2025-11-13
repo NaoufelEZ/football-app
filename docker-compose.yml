@@ -6,10 +6,8 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-    environment:
-      - DATABASE_URL=${DATABASE_URL}
-      - API_FOOTBALL_KEY=${API_FOOTBALL_KEY}
-      - NODE_ENV=development
+    env_file:
+      - .env
     depends_on:
       - db
     networks:
@@ -29,9 +27,8 @@ services:
     build: 
       context: .
       dockerfile: cron-job/Dockerfile
-    environment:
-      - DATABASE_URL=${DATABASE_URL}
-      - API_FOOTBALL_KEY=${API_FOOTBALL_KEY}
+    env_file:
+      - .env
     depends_on:
       - db
     networks:

@@ -5,7 +5,7 @@ WORKDIR /app
 # Aynı context'teki dosyaları kopyala (artık ../ gerek yok)
 COPY package*.json ./
 COPY scripts ./scripts
-COPY .env ./
+COPY .env.development ./
 
 RUN npm install
 
