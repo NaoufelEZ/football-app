@@ -1,12 +1,10 @@
-# ⚽ Football App / Futbol Uygulaması
 
-[**English**](#english) | [**Türkçe**](#türkçe)
+<span id="ENG"></span>
 
----
+# ⚽ Football App
 
-# English
+[Türkçe](#TUR)
 
-## 🚀 Football App
 
 A modern football application with real-time match data, team information, and league standings. Built with Docker, Next.js 14, PostgreSQL, and API-Football integration.
 
@@ -133,9 +131,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-# Türkçe
+<span id="TUR"></span>
 
-## 🚀 Futbol Uygulaması
+# ⚽ Futbol Uygulaması
+
+[English](#ENG)
 
 Gerçek zamanlı maç verileri, takım bilgileri ve lig sıralamaları içeren modern bir futbol uygulaması. Docker, Next.js 14, PostgreSQL ve API-Football entegrasyonu ile geliştirilmiştir.
 
@@ -146,7 +146,7 @@ Gerçek zamanlı maç verileri, takım bilgileri ve lig sıralamaları içeren m
 ![Vercel](https://img.shields.io/badge/Vercel_Deploy-✓-black)
 
 ## ✨ Özellikler
-```
+
 - **🏆 Gerçek Zamanlı Veriler**: API-Football ile canlı lig ve takım bilgileri
 - **🐳 Docker Containerization**: Tüm uygulama Docker container'larında çalışır
 - **🗄️ Cloud PostgreSQL**: Neon.tek cloud veritabanı + local yedek
