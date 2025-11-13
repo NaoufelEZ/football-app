@@ -54,7 +54,7 @@ A modern football application with real-time match data, team information, and l
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/football-app.git
+git clone https://github.com/mtoprak53/football-app.git
 cd football-app
 ```
 
@@ -185,7 +185,7 @@ Gerçek zamanlı maç verileri, takım bilgileri ve lig sıralamaları içeren m
 
 1. **Repository'yi klonlayın:**
 ```bash
-git clone https://github.com/kullaniciadiniz/football-app.git
+git clone https://github.com/mtoprak53/football-app.git
 cd football-app
 ```
 
