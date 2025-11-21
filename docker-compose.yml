@@ -6,34 +6,56 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+      - ./database:/database:ro  # 👈 SQL script'leri için
     env_file:
-      - .env
+      - .env.development
+    environment:
+      - NODE_ENV=development
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - football-network
+    restart: unless-stopped
 
   db:
     image: postgres:15
     environment:
       POSTGRES_PASSWORD: mysecretpassword
       POSTGRES_DB: football
+      POSTGRES_USER: postgres
     ports:
       - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # 👈 BU SATIR ÖNEMLİ!
+      - ./database:/database:ro  # 👈 SQL script'leri için
     networks:
       - football-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
 
   cron-job:
     build: 
       context: .
       dockerfile: cron-job/Dockerfile
     env_file:
-      - .env
+      - .env.development
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     networks:
       - football-network
+    restart: unless-stopped
 
+# 👇 BU BÖLÜM MUTLAKA OLMALI!
 networks:
   football-network:
     driver: bridge
+
+volumes:
+  postgres_data:  # 👈 BU TANIM MUTLAKA OLMALI!
+    driver: local

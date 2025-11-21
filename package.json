@@ -3,9 +3,28 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
+    "dev:docker": "docker compose up --build",
+    "dev:watch": "docker compose up app --build",
     "build": "next build",
-    "start": "next start",
-    "update-countries": "node scripts/update-countries.js"
+    "start": "next start",    
+    "start:docker": "docker compose up -d",
+
+    "db:local": "docker compose up db -d",
+    "db:logs": "docker compose logs db -f",
+    "clean": "docker compose down -v --remove-orphans",
+    "production:build": "NODE_ENV=production npm run build",
+    "update-countries": "node scripts/update-countries.js",
+    
+    "db:setup": "docker compose exec -T db psql -U postgres -d football -f /database/setup.sql",
+    "db:reset": "docker compose down -v && docker compose up -d --wait && sleep 5 && npm run db:setup",
+    "db:shell": "docker compose exec db psql -U postgres -d football",
+    "db:tables": "npm run db:shell -- -c \"\\dt\"",
+    "db:teams": "npm run db:shell -- -c \"SELECT id, name, country FROM teams ORDER BY name\"",
+    "db:count": "npm run db:shell -- -c \"SELECT COUNT(*) as total_teams FROM teams\"",
+    "db:clean": "docker compose down -v",
+    
+    "migrate:copy-sql": "docker compose cp database/setup.sql db:/database/setup.sql",
+    "migrate:run": "npm run migrate:copy-sql && npm run db:setup"
   },
   "dependencies": {
     "next": "14.2.3",

@@ -131,6 +131,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
+**⭐ If you liked this project, don't forget to give it a star!**
+
+---
+
+
+
 <span id="TUR"></span>
 
 # ⚽ Futbol Uygulaması
