@@ -6,12 +6,14 @@
     "dev:docker": "docker compose up --build",
     "dev:watch": "docker compose up app --build",
     "build": "next build",
-    "start": "next start",    
-    "start:docker": "docker compose up -d",
+    "start": "next start",
+    "start:docker": "docker compose up",
+    "restart:docker": "docker compose down && docker compose up --build",
+    "down:docker": "docker compose down",
 
     "db:local": "docker compose up db -d",
     "db:logs": "docker compose logs db -f",
-    "clean": "docker compose down -v --remove-orphans",
+    "clean:docker": "docker compose down -v --remove-orphans",
     "production:build": "NODE_ENV=production npm run build",
     "update-countries": "node scripts/update-countries.js",
     
